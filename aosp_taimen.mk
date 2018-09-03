@@ -1,5 +1,4 @@
-#
-# Copyright 2017 The Android Open Source Project
+# Copyright (C) 2017 The Dirty Unicorns Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,31 +11,29 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
+
+# Include AEX common configuration
+include vendor/aosp/common.mk
 
 # Inherit from the common Open Source product configuration
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
+# Inherit AOSP device configuration for  taimen
+$(call inherit-product, device/google/taimen/full_taimen.mk)
 
-$(call inherit-product, device/google/taimen/device.mk)
-$(call inherit-product-if-exists, vendor/google_devices/taimen/proprietary/device-vendor.mk)
-
-PRODUCT_PACKAGES += \
-    Dialer \
-    Launcher3QuickStep \
-    WallpaperPicker \
-    netutils-wrapper-1.0 \
-    vndk_package
-
-PRODUCT_COPY_FILES += \
-    device/google/taimen/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
-    frameworks/native/data/etc/aosp_excluded_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/aosp_excluded_hardware.xml
-
-#PRODUCT_RESTRICT_VENDOR_FILES := owner
-
-PRODUCT_MANUFACTURER := Google
-PRODUCT_BRAND := Android
+# Override AOSP build properties
 PRODUCT_NAME := aosp_taimen
 PRODUCT_DEVICE := taimen
-PRODUCT_MODEL := AOSP on taimen
+PRODUCT_BRAND := Google
+PRODUCT_MODEL := Pixel 2 XL
+PRODUCT_MANUFACTURER := Google
+
+# Device Fingerprint
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=taimen \
+    BUILD_FINGERPRINT=google/taimen/taimen:9/PPR1.180610.009/4898911:user/release-keys \
+    PRIVATE_BUILD_DESC="taimen-user 9 PPR1.180610.009 4898911 release-keys"
+
+$(call inherit-product-if-exists, vendor/google/taimen/taimen-vendor.mk)
+$(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
