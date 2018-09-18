@@ -22,6 +22,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 # Inherit AOSP device configuration for  taimen
 $(call inherit-product, device/google/taimen/full_taimen.mk)
 
+# Include Bootanimation configuration
+TARGET_BOOT_ANIMATION_RES := 1080
+
 # Override AOSP build properties
 PRODUCT_NAME := aosp_taimen
 PRODUCT_DEVICE := taimen
