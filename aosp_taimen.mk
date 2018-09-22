@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+TARGET_DEVICE := taimen
+
 # Include AEX common configuration
 include vendor/aosp/common.mk
 
