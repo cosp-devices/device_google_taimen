@@ -13,6 +13,7 @@
 # limitations under the License.
 
 TARGET_DEVICE := taimen
+EXTENDED_BUILD_TYPE := OFFICIAL
 
 # Include AEX common configuration
 include vendor/aosp/common.mk
