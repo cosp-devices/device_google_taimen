@@ -35,11 +35,5 @@ PRODUCT_BRAND := Google
 PRODUCT_MODEL := Pixel 2 XL
 PRODUCT_MANUFACTURER := Google
 
-# Device Fingerprint
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=taimen \
-    BUILD_FINGERPRINT=google/taimen/taimen:9/PQ2A.190305.002/5240760:user/release-keys \
-    PRIVATE_BUILD_DESC="taimen-user 9 PQ2A.190305.002 5240760 release-keys"
-
 $(call inherit-product-if-exists, vendor/google/taimen/taimen-vendor.mk)
 $(call inherit-product-if-exists, vendor/pixelgapps/pixel-gapps.mk)
