@@ -18,6 +18,7 @@ TARGET_BOOTLOADER_BOARD_NAME := taimen
 DEFAULT_LOW_PERSISTENCE_MODE_BRIGHTNESS := 0x0000008c
 
 BOARD_KERNEL_CMDLINE += console=ttyMSM0,115200,n8 earlycon=msm_serial_dm,0xc1b0000
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 include device/google/wahoo/BoardConfig.mk
 
@@ -26,6 +27,7 @@ BOARD_AVB_ENABLE := true
 
 # sepolicy
 BOARD_SEPOLICY_DIRS += device/google/taimen/sepolicy
+SELINUX_IGNORE_NEVERALLOWS := true
 
 # Testing related defines
 BOARD_PERFSETUP_SCRIPT := platform_testing/scripts/perf-setup/wahoo-setup.sh

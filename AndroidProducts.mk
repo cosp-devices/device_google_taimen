@@ -15,5 +15,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_taimen.mk \
+    $(LOCAL_DIR)/cosp_taimen.mk \
     $(LOCAL_DIR)/full_taimen.mk

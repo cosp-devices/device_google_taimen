@@ -301,4 +301,17 @@
 
     <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveBatteryLed">false</bool>
+	
+    <!-- Control whether the always on display mode is enabled by default. This value will be used
+         during initialization when the setting is still null. -->
+    <bool name="config_dozeAlwaysOnEnabled">true</bool>
+
+	<!-- Whether the device supports Smart Pixels -->
+    <bool name="config_enableSmartPixels">true</bool>
+
+	<!-- Inherit Elmyra -->
+	<bool name="has_elmyra_service">true</bool>
+
+    <!-- Define that we use a higher screen ratio (18:9) than standard (16:9) -->
+    <bool name="config_haveHigherAspectRatioScreen">true</bool>
 </resources>
