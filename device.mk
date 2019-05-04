@@ -135,12 +135,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true
     
-# Telephony
+#QTIAudio
 PRODUCT_PACKAGES += \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
+    QtiAudio
 	
 # IMS
 PRODUCT_PACKAGES += \
