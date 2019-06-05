@@ -11,6 +11,11 @@
     "branch":       "pie"
   },
   {
+    "repository":   "packages_apps_QtiAudio",
+    "target_path":  "packages/apps/QtiAudio",
+    "branch":       "pie"
+  },
+  {
     "repository":  "android_vendor_google",
     "target_path": "vendor/google",
     "branch":      "pie"
